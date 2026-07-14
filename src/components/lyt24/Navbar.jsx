@@ -16,6 +16,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const menuIsCompact = scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -59,18 +60,32 @@ export default function Navbar() {
         <div
           className={`mx-auto transition-all duration-500 ${
             scrolled
-              ? "mt-3 max-w-[1000px] rounded-2xl glass-strong shadow-2xl shadow-cobalt/5"
+              ? "mr-0 mt-3 w-fit rounded-full glass-strong shadow-2xl shadow-cobalt/10"
               : "max-w-7xl bg-transparent"
           }`}
         >
-          <nav className="flex items-center justify-between px-6 py-4">
+          <nav
+            className={`flex items-center justify-between transition-all duration-500 ${
+              scrolled ? "px-3 py-3" : "px-6 py-4"
+            }`}
+          >
             <Link
               to="/"
-              className="font-display text-xl font-bold tracking-tight text-white"
+              className={`font-display text-xl font-bold tracking-tight text-white transition-all duration-300 ${
+                scrolled
+                  ? "pointer-events-none w-0 -translate-x-2 overflow-hidden opacity-0"
+                  : "opacity-100"
+              }`}
             >
               LYT<span className="gradient-text">24</span>
             </Link>
-            <div className="hidden items-center gap-8 md:flex">
+            <div
+              className={`hidden items-center gap-8 transition-all duration-300 md:flex ${
+                scrolled
+                  ? "pointer-events-none w-0 overflow-hidden opacity-0"
+                  : "opacity-100"
+              }`}
+            >
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -90,7 +105,9 @@ export default function Navbar() {
               </Link>
             </div>
             <button
-              className="p-2 text-white md:hidden"
+              className={`rounded-full border border-white/10 bg-white/5 p-2 text-white transition-colors hover:bg-white/10 ${
+                scrolled ? "flex" : "flex md:hidden"
+              }`}
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -106,7 +123,9 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] flex flex-col bg-midnight/95 backdrop-blur-2xl md:hidden"
+            className={`fixed inset-0 z-[60] flex flex-col bg-midnight/95 backdrop-blur-2xl ${
+              menuIsCompact ? "" : "md:hidden"
+            }`}
           >
             <div className="flex items-center justify-between px-6 py-5">
               <span className="font-display text-xl font-bold text-white">

@@ -13,16 +13,16 @@ export default function FeaturedProjects() {
   return (
     <section
       id="portfolio"
-      className="relative border-b border-white/5 py-24 md:py-32"
+      className="relative border-b border-white/5 py-20 md:py-32"
     >
       <GridBackground />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
               <span className="section-label">Featured Work</span>
-              <h2 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
+              <h2 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
                 Projects That Drive Impact
               </h2>
             </div>
@@ -36,7 +36,7 @@ export default function FeaturedProjects() {
           </div>
         </SectionReveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <ProjectCard key={project.slug || i} project={project} index={i} />
           ))}

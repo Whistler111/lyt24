@@ -35,11 +35,11 @@ export default function ProjectCaseStudy() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-white/5 pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="relative overflow-hidden border-b border-white/5 pb-14 pt-28 md:pb-24 md:pt-40">
         <GridBackground />
         <div className="absolute left-1/4 top-0 h-64 w-96 rounded-full bg-cobalt/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionReveal>
             <Link
               to="/portfolio"
@@ -60,10 +60,10 @@ export default function ProjectCaseStudy() {
               )}
             </div>
 
-            <h1 className="mt-4 max-w-4xl font-heading text-4xl font-bold tracking-tight text-white md:text-6xl">
+            <h1 className="mt-4 max-w-4xl font-heading text-4xl font-bold tracking-normal text-white md:text-6xl">
               {project.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-steel">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-steel md:text-lg">
               {project.short_description}
             </p>
           </SectionReveal>
@@ -72,7 +72,7 @@ export default function ProjectCaseStudy() {
 
       {/* Project Image */}
       <section className="relative border-b border-white/5 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionReveal>
             <div className="relative overflow-hidden rounded-2xl border border-white/10">
               <img
@@ -90,13 +90,13 @@ export default function ProjectCaseStudy() {
       </section>
 
       {/* Challenge & Solution */}
-      <section className="relative border-b border-white/5 py-24 md:py-32">
+      <section className="relative border-b border-white/5 py-20 md:py-32">
         <GridBackground />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <SectionReveal>
-              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.02] p-8">
+              <div className="h-full rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
                 <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-red-400">
                   The Challenge
                 </h3>
@@ -106,7 +106,7 @@ export default function ProjectCaseStudy() {
               </div>
             </SectionReveal>
             <SectionReveal delay={0.1}>
-              <div className="h-full rounded-2xl border border-white/10 bg-gradient-to-br from-aqua/5 to-transparent p-8">
+              <div className="h-full rounded-2xl border border-white/10 bg-gradient-to-br from-aqua/5 to-transparent p-6 md:p-8">
                 <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-aqua">
                   Our Solution
                 </h3>
@@ -159,7 +159,7 @@ export default function ProjectCaseStudy() {
                       Results & Impact
                     </h3>
                   </div>
-                  <p className="mt-4 text-lg leading-relaxed text-white">
+                  <p className="mt-4 text-base leading-relaxed text-white md:text-lg">
                     {project.results}
                   </p>
                 </div>
@@ -170,7 +170,7 @@ export default function ProjectCaseStudy() {
           {/* CTA */}
           <div className="mt-16 text-center">
             <SectionReveal>
-              <h3 className="font-heading text-2xl font-bold text-white">
+              <h3 className="font-heading text-2xl font-bold tracking-normal text-white">
                 Have a similar project in mind?
               </h3>
               <p className="mt-3 text-steel">
@@ -178,7 +178,7 @@ export default function ProjectCaseStudy() {
               </p>
               <Link
                 to="/contact"
-                className="group mt-6 inline-flex items-center gap-2 rounded-full bg-cobalt px-8 py-4 text-base font-semibold text-white transition-all hover:bg-cobalt/90 hover:shadow-xl hover:shadow-cobalt/30"
+                className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cobalt px-6 py-4 text-base font-semibold text-white transition-all hover:bg-cobalt/90 hover:shadow-xl hover:shadow-cobalt/30 sm:w-auto sm:px-8"
               >
                 Start a Project
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

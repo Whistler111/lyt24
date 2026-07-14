@@ -21,13 +21,13 @@ export default function Testimonials() {
 
   return (
     <section className="relative border-b border-white/5 py-24 md:py-32">
-      <div className="absolute left-1/2 top-0 h-64 w-[600px] -translate-x-1/2 rounded-full bg-grape/5 blur-[120px]" />
+      <div className="absolute left-1/2 top-0 h-64 w-[min(600px,90vw)] -translate-x-1/2 rounded-full bg-grape/5 blur-[120px]" />
       <GridBackground />
 
-      <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
         <SectionReveal className="text-center">
           <span className="section-label">Client Stories</span>
-          <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="mt-4 font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
             Trusted by Leaders
           </h2>
         </SectionReveal>
@@ -40,7 +40,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:p-12"
+              className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-12"
             >
               <Quote className="h-10 w-10 text-aqua/30" />
               <div className="mt-4 flex gap-1">
@@ -48,7 +48,7 @@ export default function Testimonials() {
                   <Star key={i} className="h-4 w-4 fill-aqua text-aqua" />
                 ))}
               </div>
-              <p className="mt-6 text-lg leading-relaxed text-white md:text-xl">
+              <p className="mt-6 font-quote text-xl leading-relaxed text-white md:text-2xl">
                 "{testimonial.quote}"
               </p>
               <div className="mt-8">

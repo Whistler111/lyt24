@@ -68,9 +68,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        heading: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
-        body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+        quote: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: [
           "JetBrains Mono",
           "ui-monospace",

@@ -27,8 +27,8 @@ export default function ProjectCard({ project, index = 0 }) {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/30 to-transparent" />
-        <div className="absolute inset-0 flex flex-col justify-end p-6">
-          <div className="mb-3 flex gap-2">
+        <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
+          <div className="mb-3 flex flex-wrap gap-2">
             <span className="rounded-full border border-phosphor/30 bg-phosphor/10 px-3 py-1 text-xs font-medium text-phosphor">
               {project.category}
             </span>
@@ -36,7 +36,7 @@ export default function ProjectCard({ project, index = 0 }) {
               {project.industry}
             </span>
           </div>
-          <h3 className="font-display text-xl font-semibold text-white transition-colors group-hover:text-phosphor">
+          <h3 className="font-display text-lg font-semibold tracking-normal text-white transition-colors group-hover:text-phosphor sm:text-xl">
             {project.title}
           </h3>
           <p className="mt-2 line-clamp-2 text-sm text-white/50">

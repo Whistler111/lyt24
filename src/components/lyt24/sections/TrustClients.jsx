@@ -25,7 +25,7 @@ export default function TrustClients() {
     <section className="relative border-b border-white/5 py-20 md:py-24">
       <GridBackground />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal className="text-center">
           <span className="section-label">Trusted By Industry Leaders</span>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-steel">

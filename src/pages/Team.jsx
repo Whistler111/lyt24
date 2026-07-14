@@ -8,6 +8,7 @@ const DEPARTMENTS = [
   "Leadership",
   "Engineering",
   "Product",
+  "Legal",
   "Operations",
   "Marketing",
 ];
@@ -21,31 +22,36 @@ export default function Team() {
         subtitle="Meet all the talented professionals who make LYT24 Technologies successful. Our team brings together expertise across engineering, product, operations, and marketing."
       />
 
-      <section className="relative border-b border-white/5 py-24 md:py-32">
+      <section className="relative border-b border-white/5 py-20 md:py-32">
         <GridBackground />
 
-        <div className="relative mx-auto max-w-7xl space-y-20 px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl space-y-16 px-5 sm:px-6 md:space-y-20 lg:px-8">
           {DEPARTMENTS.map((dept) => {
             const members = TEAM_MEMBERS.filter((m) => m.department === dept);
-            if (members.length === 0) return null;
             return (
               <div key={dept}>
                 <SectionReveal>
-                  <div className="flex items-center gap-4">
-                    <h2 className="font-heading text-2xl font-bold text-white">
+                  <div className="flex flex-wrap items-center gap-4">
+                    <h2 className="font-heading text-2xl font-bold uppercase tracking-normal text-white">
                       {dept}
                     </h2>
-                    <div className="h-px flex-1 bg-white/10" />
+                    <div className="h-px min-w-16 flex-1 bg-white/10" />
                     <span className="font-mono text-xs text-steel">
-                      {members.length} members
+                      {members.length}
                     </span>
                   </div>
                 </SectionReveal>
-                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                  {members.map((member, i) => (
-                    <TeamCard key={member.name} member={member} index={i} />
-                  ))}
-                </div>
+                {members.length > 0 ? (
+                  <div className="mt-8 grid justify-center gap-6 [grid-template-columns:repeat(auto-fit,minmax(210px,260px))] md:mt-10">
+                    {members.map((member, i) => (
+                      <TeamCard key={member.name} member={member} index={i} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-10 rounded-2xl border border-dashed border-white/15 bg-white/[0.03] px-6 py-10 text-center text-sm text-steel">
+                    Profiles will appear here shortly.
+                  </div>
+                )}
               </div>
             );
           })}

@@ -17,23 +17,23 @@ export default function WhyChooseUs() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative border-b border-white/5 py-24 md:py-32">
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cobalt/5 blur-[150px]" />
+    <section className="relative border-b border-white/5 py-20 md:py-32">
+      <div className="absolute left-1/2 top-1/2 h-[500px] w-[min(800px,90vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cobalt/5 blur-[150px]" />
       <GridBackground />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">Why Choose Us</span>
-          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
             Built for Enterprise. Designed for Africa.
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-steel">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-steel md:text-lg">
             We bring the rigor of global engineering standards with the nuance
             of local market expertise to every project we undertake.
           </p>
         </SectionReveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {WHY_CHOOSE_US.map((item, i) => {
             const Icon = ICONS[item.icon] || ShieldCheck;
             return (

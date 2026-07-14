@@ -16,7 +16,6 @@ export default function Hero() {
         <source src={VIDEO_URL} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-midnight/80 via-midnight/85 to-midnight" />
-      <div className="absolute inset-0 grid-bg-light opacity-30" />
       <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-cobalt/10 blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full bg-amethyst/10 blur-3xl" />
 

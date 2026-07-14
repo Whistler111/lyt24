@@ -79,15 +79,15 @@ export default function Contact() {
         subtitle="Ready to start your next project? Reach out to our team and let's build something extraordinary together."
       />
 
-      <section className="relative border-b border-white/5 py-24 md:py-32">
+      <section className="relative border-b border-white/5 py-20 md:py-32">
         <GridBackground />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Contact Info */}
             <div className="lg:col-span-2">
               <SectionReveal>
-                <h2 className="font-heading text-2xl font-bold text-white">
+                <h2 className="font-heading text-2xl font-bold tracking-normal text-white">
                   Let's Talk
                 </h2>
                 <p className="mt-3 text-steel">
@@ -106,11 +106,13 @@ export default function Contact() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-aqua/10 text-aqua">
                       <MessageCircle className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-sm font-medium text-white">
                         WhatsApp
                       </div>
-                      <div className="text-sm text-steel">{COMPANY.phone}</div>
+                      <div className="break-words text-sm text-steel">
+                        {COMPANY.phone}
+                      </div>
                     </div>
                   </a>
 
@@ -121,11 +123,13 @@ export default function Contact() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cobalt/10 text-cobalt">
                       <Mail className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-sm font-medium text-white">
                         Email
                       </div>
-                      <div className="text-sm text-steel">{COMPANY.email}</div>
+                      <div className="break-all text-sm text-steel">
+                        {COMPANY.email}
+                      </div>
                     </div>
                   </a>
 
@@ -136,11 +140,13 @@ export default function Contact() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-grape/10 text-grape">
                       <Phone className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-sm font-medium text-white">
                         Phone
                       </div>
-                      <div className="text-sm text-steel">{COMPANY.phone}</div>
+                      <div className="break-words text-sm text-steel">
+                        {COMPANY.phone}
+                      </div>
                     </div>
                   </a>
 
@@ -148,11 +154,11 @@ export default function Contact() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/5 text-steel">
                       <MapPin className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-sm font-medium text-white">
                         Office
                       </div>
-                      <div className="text-sm text-steel">
+                      <div className="break-words text-sm text-steel">
                         {COMPANY.address}
                       </div>
                     </div>
@@ -183,7 +189,7 @@ export default function Contact() {
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-aqua/20">
                       <CheckCircle className="h-8 w-8 text-aqua" />
                     </div>
-                    <h3 className="mt-6 font-heading text-2xl font-bold text-white">
+                    <h3 className="mt-6 font-heading text-2xl font-bold tracking-normal text-white">
                       Message Sent!
                     </h3>
                     <p className="mt-2 max-w-sm text-steel">

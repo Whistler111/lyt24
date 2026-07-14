@@ -13,34 +13,34 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative border-b border-white/5 py-24 md:py-32"
+      className="relative border-b border-white/5 py-20 md:py-32"
     >
       <GridBackground />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">About LYT24</span>
-          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
             Driving Digital Transformation Across Africa
           </h2>
         </SectionReveal>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-center">
           <SectionReveal>
-            <p className="text-lg leading-relaxed text-steel">
+            <p className="text-base leading-relaxed text-steel md:text-lg">
               LYT24 Technologies is a forward-thinking digital solutions
               provider dedicated to transforming industries through robust,
               scalable, and user-centric technology. Founded in Abuja, we've
               grown into a trusted partner for organizations seeking
               enterprise-grade software solutions.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-steel">
+            <p className="mt-4 text-base leading-relaxed text-steel md:text-lg">
               We combine global expertise with local understanding to deliver
               solutions tailored to the African market — building systems that
               are not just technically excellent, but contextually relevant and
               built to last.
             </p>
-            <div className="mt-8 flex gap-8">
+            <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:gap-8">
               <div>
                 <div className="font-mono text-3xl font-bold text-aqua">
                   150+
@@ -49,7 +49,7 @@ export default function About() {
                   Projects Delivered
                 </div>
               </div>
-              <div className="border-l border-white/10 pl-8">
+              <div className="border-t border-white/10 pt-6 sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
                 <div className="font-mono text-3xl font-bold text-aqua">8+</div>
                 <div className="mt-1 text-sm text-steel">
                   Years of Excellence

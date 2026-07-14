@@ -21,13 +21,13 @@ export default function Testimonials() {
 
   return (
     <section className="border-y border-white/5 bg-navy py-24 lg:py-32">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-4xl px-5 sm:px-6">
         <SectionReveal>
           <div className="text-center">
             <span className="text-sm font-medium uppercase tracking-wider text-phosphor">
               Testimonials
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-normal text-white sm:text-4xl lg:text-5xl">
               Trusted by <span className="gradient-text">Leaders</span>
             </h2>
           </div>
@@ -53,7 +53,7 @@ export default function Testimonials() {
                   ),
                 )}
               </div>
-              <blockquote className="text-center text-xl leading-relaxed text-white/80 lg:text-2xl">
+              <blockquote className="font-quote text-center text-xl leading-relaxed text-white/80 lg:text-2xl">
                 &ldquo;{testimonials[active].quote}&rdquo;
               </blockquote>
               <div className="mt-8 text-center">

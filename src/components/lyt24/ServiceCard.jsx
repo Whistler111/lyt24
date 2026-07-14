@@ -20,7 +20,7 @@ export default function ServiceCard({
         delay: index * 0.08,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-8 transition-all duration-500 hover:border-cobalt/30 hover:bg-white/[0.04] ${
+      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-500 hover:border-cobalt/30 hover:bg-white/[0.04] md:p-8 ${
         isWide ? "lg:col-span-2" : "lg:col-span-1"
       }`}
     >
@@ -28,7 +28,7 @@ export default function ServiceCard({
       <div className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-cobalt/20 bg-cobalt/10 text-cobalt-light transition-all duration-500 group-hover:scale-110 group-hover:border-phosphor/30 group-hover:text-phosphor">
         <Icon name={icon} className="h-6 w-6" />
       </div>
-      <h3 className="mt-6 font-display text-xl font-semibold text-white">
+      <h3 className="mt-6 font-display text-xl font-semibold tracking-normal text-white">
         {title}
       </h3>
       <p className="mt-3 text-sm leading-relaxed text-white/50">

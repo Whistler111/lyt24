@@ -7,23 +7,23 @@ export default function Process() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative border-b border-white/5 py-24 md:py-32">
+    <section className="relative border-b border-white/5 py-20 md:py-32">
       <GridBackground />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">Our Process</span>
-          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
             A Proven Path From Idea to Impact
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-steel">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-steel md:text-lg">
             Our seven-step development process ensures every project is
             delivered with precision, transparency, and excellence.
           </p>
         </SectionReveal>
 
         <div className="relative mt-16">
-          <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-cobalt/30 via-aqua/20 to-transparent" />
+          <div className="absolute bottom-0 left-4 top-0 hidden w-px bg-gradient-to-b from-cobalt/30 via-aqua/20 to-transparent sm:block" />
           <ol className="space-y-6">
             {PROCESS_STEPS.map((step, i) => (
               <motion.li
@@ -34,7 +34,7 @@ export default function Process() {
                 }
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="relative flex gap-6"
+                className="relative flex flex-col gap-4 sm:flex-row sm:gap-6"
               >
                 <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-aqua/30 bg-obsidian font-mono text-sm font-bold text-aqua">
                   {step.number}

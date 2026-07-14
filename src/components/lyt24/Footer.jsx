@@ -40,7 +40,6 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-white/5 bg-midnight">
-      <div className="absolute inset-0 grid-bg-light opacity-30" />
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
