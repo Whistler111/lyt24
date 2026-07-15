@@ -4,21 +4,20 @@ export const VIDEO_URL =
   "https://videos.pexels.com/video-files/29718189/12778062_2560_1440_30fps.mp4";
 
 export const contactInfo = {
-  address: "24 I.T Igbani Street, Jabi Abuja, Nigeria",
+  address: "24 I.T. Igbani, Utako, Abuja 900001, Federal Capital Territory, Nigeria",
   email: "contact@lyt24tech.com",
   phone: "+234 7030103743",
   phoneHref: "tel:+2347030103743",
   whatsapp: "https://wa.me/2347030103743",
   mapEmbed:
-    "https://www.openstreetmap.org/export/embed.html?bbox=7.4687%2C9.0665%2C7.4887%2C9.0865&layer=mapnik&marker=9.0765%2C7.4787",
-  mapLink:
-    "https://www.openstreetmap.org/?mlat=9.0765&mlon=7.4787#map=15/9.0765/7.4787",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.011534165433!2d7.423156275089465!3d9.062711590999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e75cba9c784c7%3A0x6d398fbbb8207876!2sLyt24tech%20-%20Lyt24%20technologies!5e0!3m2!1sen!2sus!4v1784066300403!5m2!1sen!2sus",
+  mapLink: "https://maps.app.goo.gl/1EASJGNc8h5zMsLk8",
 };
 
 export const stats = [
-  { label: "Projects Delivered", value: 150, suffix: "+" },
-  { label: "Years of Experience", value: 8, suffix: "+" },
-  { label: "Clients Served", value: 80, suffix: "+" },
+  { label: "Projects Delivered", value: 50, suffix: "+" },
+  { label: "Years of Experience", value: 2, suffix: "+" },
+  { label: "Clients Served", value: 20, suffix: "+" },
   { label: "Team Members", value: 25, suffix: "+" },
 ];
 
@@ -47,14 +46,46 @@ export const sectors = [
 export const PARTNERS = clientLogos;
 
 export const INDUSTRIES = [
-  { name: "Finance", icon: "CreditCard" },
-  { name: "Healthcare", icon: "HeartPulse" },
-  { name: "Government", icon: "Landmark" },
-  { name: "Education", icon: "GraduationCap" },
-  { name: "Transportation", icon: "Truck" },
-  { name: "Retail", icon: "ShoppingBag" },
-  { name: "Real Estate", icon: "Landmark" },
-  { name: "Agriculture", icon: "Landmark" },
+  {
+    name: "Finance",
+    icon: "CreditCard",
+    bgImage: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Healthcare",
+    icon: "HeartPulse",
+    bgImage: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Government",
+    icon: "Landmark",
+    bgImage: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Education",
+    icon: "GraduationCap",
+    bgImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Transportation",
+    icon: "Truck",
+    bgImage: "https://images.unsplash.com/photo-1519003722824-192d992a6058?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Retail",
+    icon: "ShoppingBag",
+    bgImage: "https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Real Estate",
+    icon: "Building2",
+    bgImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    name: "Agriculture",
+    icon: "Sprout",
+    bgImage: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=400&q=80"
+  },
 ];
 
 export const services = [
@@ -70,6 +101,7 @@ export const services = [
       "Legacy Modernization",
     ],
     span: "wide",
+    bgImage: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: "Globe",
@@ -83,6 +115,7 @@ export const services = [
       "Core Web Vitals",
     ],
     span: "normal",
+    bgImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: "Smartphone",
@@ -95,6 +128,7 @@ export const services = [
       "Push Notifications",
     ],
     span: "normal",
+    bgImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: "ShoppingCart",
@@ -103,6 +137,7 @@ export const services = [
       "Secure, scalable online store systems with integrated payments, inventory management, and analytics dashboards.",
     specs: ["Payment Gateways", "Inventory Sync", "Multi-vendor", "Analytics"],
     span: "wide",
+    bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: "Cloud",
@@ -111,6 +146,7 @@ export const services = [
       "Cloud migration, infrastructure setup, and DevOps for reliability at scale.",
     specs: ["AWS", "Azure", "CI/CD", "Kubernetes"],
     span: "normal",
+    bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: "Workflow",
@@ -124,6 +160,7 @@ export const services = [
       "ROI Optimization",
     ],
     span: "wide",
+    bgImage: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
   },
 ];
 
@@ -333,7 +370,7 @@ export const teamMembers = [
   },
   {
     name: "Gunu Usman",
-    role: "Technical Project Lead",
+    role: "MD/CEO",
     department: "Leadership",
     image: "/gunuanime2.png",
     hoverImage: "/gunu.jpg",
@@ -378,7 +415,7 @@ export const teamMembers = [
   },
   {
     name: "John I. Obi",
-    role: "Full Stack Developer & AI Robotics",
+    role: "Full Stack Developer",
     department: "Engineering",
     image: "/johnanime.png",
     hoverImage: "/john.png",
@@ -409,7 +446,7 @@ export const teamMembers = [
   },
   {
     name: "Ajiboye Olumuyiwa",
-    role: "Backend Engineer / AI-Robotics",
+    role: "AI-Robotics",
     department: "Engineering",
     image: "/olumuyiwaanime.png",
     hoverImage: "/olumuyiwa.jpeg",
@@ -465,7 +502,7 @@ export const teamMembers = [
   },
   {
     name: "Beatrice Ishaku",
-    role: "Data Scientist & Machine Learning",
+    role: "Data Scientist",
     department: "Engineering",
     image: "/beatriceanime.png",
     hoverImage: "/beatrice.png",
@@ -529,7 +566,7 @@ export const teamMembers = [
   },
   {
     name: "Deborah Yakubu",
-    role: "Web & Mobile App Developer",
+    role: "Mobile App Developer",
     department: "Engineering",
     image: "/deborahanime.png",
     hoverImage: "/deborah.png",
@@ -662,7 +699,7 @@ export const teamMembers = [
   },
   {
     name: "Samuel Yaula Dutse",
-    role: "Data Scientist & Machine Learning Engineer",
+    role: "Machine Learning Engineer",
     department: "Engineering",
     image: "/samuelanime.png",
     hoverImage: "/samuel.png",
@@ -754,7 +791,7 @@ export const teamMembers = [
 
   {
     name: "Jeffrey Umogbai",
-    role: "Assistant Project Manager",
+    role: "Project Manager",
     department: "Operations",
     image: "/jeffanime.png",
     hoverImage: "/jeff.png",
@@ -833,7 +870,7 @@ export const teamMembers = [
   },
   {
     name: "F. S. Jimba, Esq.",
-    role: "Principal Partner",
+    role: "Legal Partner",
     department: "Legal",
     image: "/felixanime.png",
     hoverImage: "/felix.jpeg",
@@ -867,7 +904,7 @@ export const teamMembers = [
   },
   {
     name: "Damilola David",
-    role: "Web & Mobile Developer",
+    role: "Fullstack Developer",
     department: "Engineering",
     image: "/davidanime.png",
     hoverImage: "/david.jpg",
@@ -1023,28 +1060,22 @@ export const testimonials = [
 
 export const companyTimeline = [
   {
-    year: "2018",
+    year: "2024",
     title: "Founded",
     description:
       "LYT24 Technologies was founded in Abuja with a vision to transform African businesses through technology.",
   },
   {
-    year: "2020",
-    title: "Expansion",
+    year: "2025",
+    title: "Growth",
     description:
       "Expanded our team and took on enterprise clients across finance, healthcare, and government sectors.",
   },
   {
-    year: "2022",
-    title: "Growth",
-    description:
-      "Crossed 100+ delivered projects and established partnerships with leading technology providers.",
-  },
-  {
-    year: "2024",
+    year: "2026",
     title: "Innovation",
     description:
-      "Leading digital transformation initiatives across Nigeria with a team of 25+ professionals.",
+      "Leading digital transformation initiatives across Nigeria, crossing 50+ delivered projects.",
   },
 ];
 
@@ -1088,12 +1119,6 @@ export const footerLinks = {
     { label: "Web Development", to: "/#services" },
     { label: "Mobile Apps", to: "/#services" },
     { label: "Cloud Solutions", to: "/#services" },
-  ],
-  portfolio: [
-    { label: "All Projects", to: "/portfolio" },
-    { label: "Case Studies", to: "/portfolio" },
-    { label: "NGVMS Platform", to: "/portfolio/ngvms-platform" },
-    { label: "Banking App", to: "/portfolio/mobile-banking-app" },
   ],
 };
 

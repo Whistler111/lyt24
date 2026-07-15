@@ -1,116 +1,244 @@
 export const PROJECTS = [
   {
-    title: "NGVMS Platform",
-    slug: "ngvms-platform",
-    category: "Web",
-    industry: "Logistics & Transport",
+    title: "Nigeria Gas Vehicle Monitoring System (NGVMS)",
+    slug: "picng-ngvms",
+    category: "Government",
+    industry: "Energy & Regulatory",
     short_description:
-      "A modern responsive web platform for a transport company with real-time fleet tracking and online booking.",
+      "A mission-critical regulatory platform developed for the Presidential CNG Initiative to monitor and manage compressed natural gas vehicle conversions and the CNG ecosystem nationwide.",
+    description:
+      "A mission-critical regulatory platform developed for the Presidential CNG Initiative to monitor and manage compressed natural gas vehicle conversions and the CNG ecosystem nationwide.",
     challenge:
-      "A leading transport company in Abuja needed a centralized platform to manage fleet operations, track vehicles in real-time, and provide customers with up-to-date schedules and online booking capabilities. Their legacy system was slow, unreliable, and unable to scale with growing operations.",
+      "The Presidential CNG Initiative needed a secure, high-performance, and unified regulatory framework to track vehicle conversions, compliance standards, and cng safety parameters across multiple national stakeholders including NMDPRA, NADDC, FRSC, and SON with zero downtime.",
     solution:
-      "We built a custom web platform using React and Node.js with real-time WebSocket integration for live fleet tracking. The system includes an admin dashboard for fleet management, a customer-facing portal for schedules and bookings, and a mobile-responsive design that works seamlessly across all devices.",
+      "We built a secure, centralized regulatory platform featuring real-time conversion tracking, compliance reporting, and secure inter-agency data integration. The platform supports instant verification workflows, status checks, and role-based access control.",
     results:
-      "40% reduction in operational costs through optimized routing. 60% improvement in customer satisfaction with real-time updates. 99.9% uptime since launch. 3x increase in online bookings within the first quarter.",
-    tech_stack: ["React", "Node.js", "AWS", "WebSocket", "PostgreSQL"],
-    image_url:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+      "Successfully centralized conversion logging nationwide, achieved 100% compliance transparency among government stakeholders, and maintained zero system downtime since launching.",
+    // tech_stack: ["React", "Node.js", "PostgreSQL", "Tailwind CSS", "REST API"],
+    image_url: "/ngvms.png",
+    image: "/ngvms.png",
     featured: true,
     order: 1,
+    url: "https://pci-ngvms.org.ng"
   },
   {
-    title: "Mobile Banking App",
-    slug: "mobile-banking-app",
+    title: "CNG Inspector & CO2 Emission Calculator",
+    slug: "cng-inspector",
     category: "Mobile",
-    industry: "Banking & Fintech",
+    industry: "Environmental Tech & Logistics",
     short_description:
-      "Secure mobile banking application with biometric authentication, instant transfers, and bill payments.",
+      "An online-offline capable inspection tool with SMS, USSD, and WhatsApp-bot integration designed for field officers monitoring Nigeria's CNG fleet and tracking carbon offset metrics.",
+    description:
+      "An online-offline capable inspection tool with SMS, USSD, and WhatsApp-bot integration designed for field officers monitoring Nigeria's CNG fleet and tracking carbon offset metrics.",
     challenge:
-      "A financial institution needed a secure, user-friendly mobile banking app that could handle thousands of concurrent transactions while maintaining bank-grade security and complying with CBN regulations.",
+      "Field officers needed to audit conversions, upload photo evidence, and calculate CO2 savings in remote areas with highly unstable internet connectivity, requiring robust offline syncing and cross-channel message options.",
     solution:
-      "We developed a cross-platform mobile application using Flutter with a Python/Django backend. The app features biometric authentication, real-time transaction processing, instant transfers, bill payments, and an intuitive dashboard. Security measures include end-to-end encryption, multi-factor authentication, and fraud detection algorithms.",
+      "We engineered a modern, offline-first mobile app complete with an integrated CO2 emissions calculator, photo upload queueing, and alternative notification fallback layers via SMS, USSD, and a conversational WhatsApp bot.",
     results:
-      "100K+ downloads within 3 months. 4.8-star rating on app stores. 50% reduction in branch visits. Zero security incidents since launch. Average transaction time reduced to under 3 seconds.",
-    tech_stack: ["Flutter", "Python", "Azure", "Redis", "JWT"],
-    image_url:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
+      "Enabled 100% field data collection accuracy even in zero-signal locations, digitized vehicle carbon offset estimations, and accelerated national safety certification timelines.",
+    // tech_stack: ["React Native", "WhatsApp Business API", "USSD Gateway", "SQLite", "Node.js"],
+    image_url: "/cnginspector.png",
+    image: "/cnginspector.png",
     featured: true,
     order: 2,
+    url: "https://pci-ngvms.org.ng"
   },
   {
-    title: "E-Learning Platform",
-    slug: "e-learning-platform",
+    title: "ICSC 2026 Global Portal",
+    slug: "icsc-2026",
     category: "Web",
-    industry: "Education",
+    industry: "Public Sector & Events",
     short_description:
-      "Interactive online learning platform with video courses, assessments, and progress tracking.",
+      "International Civil Service Conference registration portal built for the Office of the Head of Civil Service Nigeria, supporting secure global transactions and attendee management.",
+    description:
+      "International Civil Service Conference registration portal built for the Office of the Head of Civil Service Nigeria, supporting secure global transactions and attendee management.",
     challenge:
-      "An educational institution wanted to digitize their curriculum and reach students across Nigeria. They needed a platform that could deliver video content, conduct assessments, track progress, and issue certificates — all with reliable performance in low-bandwidth areas.",
+      "The host agency needed a highly scalable, globally accessible web infrastructure to register high-profile delegates across multiple timezones, publish schedule revisions dynamically, and handle high concurrent load safely.",
     solution:
-      "We built a comprehensive e-learning platform using Next.js and Laravel with adaptive video streaming that adjusts quality based on bandwidth. The platform includes course management, interactive assessments, gamified progress tracking, discussion forums, and automated certificate generation.",
+      "We created a headless, globally distributed registration portal with serverless caching, agenda management dashboards, unified check-in databases, and automated transactional ticketing.",
     results:
-      "25K+ active students. 90% course completion rate. 70% improvement in assessment scores. Successful deployment across 15 institutions. 40% reduction in administrative overhead.",
-    tech_stack: ["Next.js", "Laravel", "AWS", "PostgreSQL", "FFmpeg"],
-    image_url:
-      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
+      "Registered delegates smoothly from dozens of nations with 99.99% uptime, reduced physical conference line waiting by 75%, and modernized digital event logistics.",
+    // tech_stack: ["Next.js", "Tailwind CSS", "Node.js", "Serverless", "Netlify", "PostgreSQL"],
+    image_url: "/icsc.png",
+    image: "/icsc.png",
     featured: true,
     order: 3,
+    url: "https://icsc.ohcsf.gov.ng"
   },
   {
-    title: "Government Portal",
-    slug: "government-portal",
+    title: "Nigerian Carbon Market Activation Platform",
+    slug: "nigerian-carbon-market",
     category: "Government",
-    industry: "Government & Public Sector",
+    industry: "Climate Tech & Finance",
     short_description:
-      "Comprehensive portal for government services, information, and citizen engagement.",
+      "A transparent, automated digital offset registry developed for FIRS and NCCC to facilitate issuance, verification, and trading of national carbon credits.",
+    description:
+      "A transparent, automated digital offset registry developed for FIRS and NCCC to facilitate issuance, verification, and trading of national carbon credits.",
     challenge:
-      "A government agency needed a centralized digital portal to provide citizens with access to public services, information, and online applications. The existing process was entirely paper-based, leading to long queues, delays, and inefficiencies.",
+      "Nigeria needed a secure and transparent national standard ledger to onboard sustainable offset projects, issue verified credits, and maintain strict tracking to meet key international climate pacts.",
     solution:
-      "We developed a secure, scalable portal using Vue.js and Node.js with role-based access control. The platform enables citizens to apply for services, track applications, make payments, and access information. An admin dashboard provides real-time analytics and workflow management for government staff.",
+      "We developed a robust double-entry carbon asset ledger and compliance portal enabling automated validation checks, developer submissions, and real-time trading dashboards for transparency.",
     results:
-      "200K+ citizens registered. 80% reduction in processing time. 65% of applications now submitted online. ISO 27001 security compliance achieved. Citizen satisfaction score increased by 55%.",
-    tech_stack: ["Vue.js", "Node.js", "Google Cloud", "MongoDB", "OAuth2"],
-    image_url:
-      "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80",
+      "Successfully onboarded hundreds of green projects with zero downtime, creating a highly audited digital foundation for Nigeria's green trade and environmental finance.",
+    // tech_stack: ["React", "Express", "PostgreSQL", "Tailwind CSS", "Chart.js", "OAuth2"],
+    image_url: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
     featured: true,
     order: 4,
+    url: "https://nigeriancarbonmarket.ng"
   },
   {
-    title: "Healthcare Solutions",
-    slug: "healthcare-solutions",
-    category: "Healthcare",
-    industry: "Healthcare",
+    title: "NSIA Grant & Innovation Prize Portal",
+    slug: "nsia-grant-portal",
+    category: "Enterprise",
+    industry: "Finance & Venture Support",
     short_description:
-      "End-to-end hospital management system for patient records, appointments, and billing.",
+      "An advanced grant allocation and structured evaluation engine built for the Nigeria Sovereign Investment Authority to manage multi-currency applications and judge collaboration.",
+    description:
+      "An advanced grant allocation and structured evaluation engine built for the Nigeria Sovereign Investment Authority to manage multi-currency applications and judge collaboration.",
     challenge:
-      "A network of hospitals was struggling with fragmented patient records, inefficient appointment scheduling, and billing errors. They needed a unified system that could securely manage patient data while complying with healthcare data protection regulations.",
+      "The NSIA innovation awards required a unified portal to safely collect global applications, process multi-currency funding stages, and provide evaluators with objective, double-blind grading metrics.",
     solution:
-      "We built a comprehensive hospital management system using React and Python with a microservices architecture. The platform includes electronic health records, appointment scheduling, pharmacy management, billing and insurance processing, and a patient portal. All data is encrypted and access is controlled through role-based permissions.",
+      "We built a high-security grant workflow dashboard featuring interactive scoring matrices, applicant media uploads, multi-currency processing layers, and audited logging records.",
     results:
-      "500K+ patient records digitized. 45% reduction in patient wait times. 90% billing accuracy improvement. HIPAA-compliant data security. Deployed across 8 hospital facilities.",
-    tech_stack: ["React", "Python", "AWS", "PostgreSQL", "Docker"],
-    image_url:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+      "Reduced candidate screening timelines by 65%, eliminated scoring inconsistencies, and provided structured evaluation for thousands of tech startup entries.",
+    // tech_stack: ["React", "Django", "Tailwind CSS", "PostgreSQL", "Stripe API", "AWS"],
+    image_url: "/nsia.png",
+    image: "/nsia.png",
     featured: true,
     order: 5,
+    url: "http://nsia-ip.com"
   },
   {
-    title: "Enterprise Management System",
-    slug: "enterprise-management-system",
-    category: "Enterprise",
-    industry: "Enterprise",
+    title: "AYuTe Africa Challenge Portal",
+    slug: "ayute-africa",
+    category: "Web",
+    industry: "Agritech & Venture Funding",
     short_description:
-      "Custom inventory and supply chain management system with real-time analytics.",
+      "A digital competition and venture funding engine designed to empower young African agritech innovators with streamlined submissions and judge dashboards.",
+    description:
+      "A digital competition and venture funding engine designed to empower young African agritech innovators with streamlined submissions and judge dashboards.",
     challenge:
-      "A large enterprise with multiple warehouses and distribution centers needed a unified system to manage inventory, track supply chains, and generate real-time analytics. Their existing system was manual, error-prone, and lacked visibility across locations.",
+      "The program organizers needed to securely scale application intakes, collect complex pitch files, and provide pan-African judges with a centralized workspace to grade agritech ideas.",
     solution:
-      "We developed a custom enterprise management system using React and Laravel with real-time data synchronization across all locations. The platform includes inventory management, supply chain tracking, automated reorder alerts, vendor management, and a comprehensive analytics dashboard with custom reporting.",
+      "We created a custom web engine with robust file upload integrations, dynamic application pipelines, and multi-tenant grading interfaces optimized for varying regional speeds.",
     results:
-      "35% reduction in inventory holding costs. 50% faster order fulfillment. 99.5% inventory accuracy. Real-time visibility across 12 locations. ROI achieved within 8 months of deployment.",
-    tech_stack: ["React", "Laravel", "Azure", "MySQL", "Redis"],
-    image_url:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "Enabled organizers to manage thousands of continent-wide agritech entries annually with zero downtime, improving selection efficiency and operational transparency.",
+    // tech_stack: ["Next.js", "Node.js", "MongoDB", "S3 Storage", "Tailwind CSS"],
+    image_url: "/ayute.png",
+    image: "/ayute.png",
     featured: true,
     order: 6,
+    url: "https://ayute.africa/nigeria"
   },
+  {
+    title: "DBN Innovation Hub",
+    slug: "dbn-hub",
+    category: "Enterprise",
+    industry: "Start-up Development & Finance",
+    short_description:
+      "A comprehensive digital hub engineered for the Development Bank of Nigeria to track startup applications, organize mentorships, and manage resources.",
+    description:
+      "A comprehensive digital hub engineered for the Development Bank of Nigeria to track startup applications, organize mentorships, and manage resources.",
+    challenge:
+      "DBN required a single, unified ecosystem to digitize startup resource access, mentor pairings, application screenings, and funding milestone check-ins.",
+    solution:
+      "We built a robust start-up portal featuring user milestones tracking, interactive mentor matchmaking filters, secure data handling, and stakeholder progress dashboards.",
+    results:
+      "Accelerated resource matching and start-up onboarding, fostering operational excellence and clear visibility across funding and startup development paths.",
+    // tech_stack: ["React", "Express", "Node.js", "MongoDB", "Tailwind CSS"],
+    image_url: "/DBN.png",
+    image: "/DBN.png",
+    featured: true,
+    order: 7,
+    url: "https://dbninnovationhub.com"
+  },
+  {
+    title: "LEGASI Website & Data Management System",
+    slug: "legasi-dms",
+    category: "Web",
+    industry: "Non-Profit & Social Impact",
+    short_description:
+      "A secure, role-based platform comprising a public-facing website and dual dashboards to track ladies' empowerment metrics and program outcomes.",
+    description:
+      "A secure, role-based platform comprising a public-facing website and dual dashboards to track ladies' empowerment metrics and program outcomes.",
+    challenge:
+      "The NGO lacked a consolidated database to securely measure community program effectiveness, register project beneficiaries, and verify metrics for donor reporting.",
+    solution:
+      "We engineered a responsive web portal connected to dual dashboards (Super Admin & Project Manager) featuring encrypted database storage, automatic backups, and graphical impact reports.",
+    results:
+      "Streamlined target outcome logging, ensured 100% database privacy for beneficiaries, and automated high-integrity reporting for international donors.",
+    // tech_stack: ["React", "PHP", "MySQL", "Tailwind CSS", "Chart.js"],
+    image_url: "/legasi.png",
+    image: "/legasi.png",
+    featured: false,
+    order: 8,
+    url: "https://legasi.org"
+  },
+  {
+    title: "Afrik Farm Agritech Portal",
+    slug: "afrik-farm",
+    category: "E-Commerce",
+    industry: "Agriculture & Supply Chain",
+    short_description:
+      "An innovative agricultural supply chain and commerce hub connecting farmers directly to retail markets, investors, and logistics partners.",
+    description:
+      "An innovative agricultural supply chain and commerce hub connecting farmers directly to retail markets, investors, and logistics partners.",
+    challenge:
+      "Local farmers faced high post-harvest losses, lack of pricing transparency, and complex logistics coordination when trying to supply urban centers.",
+    solution:
+      "We developed a multi-tenant digital marketplace with embedded tracking coordinates, secure payment escrow contracts, and price trend indexing interfaces.",
+    results:
+      "Improved market access, increased margins for smallholder farmers, and established reliable supply chains for local food distributors.",
+    // tech_stack: ["Next.js", "Node.js", "PostgreSQL", "Tailwind CSS", "Stripe API"],
+    image_url: "/afrikfarm.png",
+    image: "/afrikfarm.png",
+    featured: false,
+    order: 9,
+    url: "https://afrikfarm.com"
+  },
+  {
+    title: "SweetRide Mobility App",
+    slug: "sweetride",
+    category: "Mobile",
+    industry: "Transportation & Mobility",
+    short_description:
+      "A ride-hailing platform that connects passengers with drivers through a user-friendly mobile app featuring real-time GPS tracking.",
+    description:
+      "Sweetride is a ride-hailing platform that connects passengers with drivers through a user-friendly mobile app. It provides a reliable, cost-effective, and safe transportation option.",
+    challenge:
+      "Urban commuters needed a reliable, safe, and transparent transportation option, while drivers lacked an efficient way to connect with passengers, navigate routes, and receive secure payments.",
+    solution:
+      "We engineered a robust mobile application with real-time GPS tracking, transparent fare estimation, digital payment integration, and a dual-interface for both riders and drivers.",
+    results:
+      "Revolutionized local transportation by enhancing urban mobility, improving driver earnings through an efficient dispatch system, and ensuring passenger safety and satisfaction.",
+    // tech_stack: ["React Native", "Node.js", "MongoDB", "Google Maps API"],
+    image_url: "/sweetride.png",
+    image: "/sweetride.png",
+    featured: false,
+    order: 10,
+    url: "https://sweetride.ng"
+  },
+  {
+    title: "InsureSweet Digital Platform",
+    slug: "insuresweet",
+    category: "Web",
+    industry: "Insurance & FinTech",
+    short_description:
+      "A comprehensive digital platform designed to simplify and streamline insurance processes for both companies and customers.",
+    description:
+      "Insuresweet is a comprehensive digital platform designed to simplify and streamline insurance processes for both companies and customers. It allows policyholders to manage policies, file claims, and process renewals through an intuitive interface.",
+    challenge:
+      "The insurance industry faces challenges with manual policy updates, lengthy claims assessments, and a lack of real-time tracking for customers, leading to poor user experiences and high administrative overhead.",
+    solution:
+      "We developed an intuitive platform that integrates with insurers' databases, automating routine tasks, and providing policyholders with real-time tracking, instant notifications, and seamless claim filing.",
+    results:
+      "Modernized the insurance experience, significantly reducing administrative overhead for insurers while providing customers with a transparent, easy-to-use digital portal.",
+    // tech_stack: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    image_url: "/insuresweet.png",
+    image: "/insuresweet.png",
+    featured: false,
+    order: 11,
+    url: "https://insuresweet.com"
+  }
 ];

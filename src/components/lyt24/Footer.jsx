@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import Icon from "./Icon";
 import { footerLinks, socialLinks, contactInfo } from "@/lib/lyt24Data";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,109 +26,96 @@ export default function Footer() {
     }
   };
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 3000);
-    }
-  };
-
   return (
-    <footer className="relative overflow-hidden border-t border-white/5 bg-midnight">
-      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-5">
+    <footer className="relative bg-[#060B15] border-t border-white/5 overflow-hidden">
+      
+      {/* Main Footer Links */}
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-12 z-10">
+        <div className="grid gap-16 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link to="/" className="font-display text-2xl font-bold text-white">
-              LYT<span className="gradient-text">24</span>
+            <Link to="/" className="flex items-center gap-3">
+               <img src="/LOGO.png" alt="LYT24" className="h-8 w-auto brightness-0 invert opacity-90" />
+               <span className="font-heading text-3xl font-bold text-white tracking-tight">LYT<span className="text-aqua">24</span></span>
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
-              Building Africa's next generation of digital solutions. Enterprise
-              software development headquartered in Abuja, Nigeria.
+            <p className="mt-6 max-w-sm text-base font-light leading-relaxed text-white/50">
+              Building Africa's next generation of digital solutions. Enterprise software development headquartered in Abuja, Nigeria.
             </p>
-            <div className="mt-6 space-y-2 text-sm text-white/60">
-              <a
-                href={contactInfo.phoneHref}
-                className="flex items-center gap-2 transition-colors hover:text-phosphor"
-              >
-                <Phone className="h-4 w-4" /> {contactInfo.phone}
+            
+            {/* Contact Details */}
+            <div className="mt-8 flex flex-col gap-5 text-sm">
+              <a href={contactInfo.phoneHref} className="flex items-center gap-4 group">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 transition-colors group-hover:border-aqua/30 group-hover:bg-aqua/10">
+                  <Phone className="h-4 w-4 text-aqua" />
+                </div>
+                <span className="font-medium text-white/60 group-hover:text-aqua transition-colors">{contactInfo.phone}</span>
               </a>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="flex items-center gap-2 transition-colors hover:text-phosphor"
-              >
-                <Mail className="h-4 w-4" /> {contactInfo.email}
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-4 group">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 transition-colors group-hover:border-aqua/30 group-hover:bg-aqua/10">
+                  <Mail className="h-4 w-4 text-aqua" />
+                </div>
+                <span className="font-medium text-white/60 group-hover:text-aqua transition-colors">{contactInfo.email}</span>
               </a>
-              <p className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />{" "}
-                {contactInfo.address}
-              </p>
+              <a href={contactInfo.mapLink} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 transition-colors group-hover:border-aqua/30 group-hover:bg-aqua/10">
+                  <MapPin className="h-4 w-4 text-aqua" />
+                </div>
+                <span className="max-w-[250px] leading-relaxed text-white/60 group-hover:text-aqua transition-colors pt-2">{contactInfo.address}</span>
+              </a>
             </div>
           </div>
-          {Object.entries(footerLinks).map(([key, links]) => (
-            <div key={key}>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-white/80">
-                {key}
-              </h4>
-              <ul className="mt-4 space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.to}
-                      onClick={(e) => handleHashClick(e, link.to)}
-                      className="text-sm text-white/50 transition-colors hover:text-phosphor"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+
+          {/* Dynamic Links */}
+          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:pl-12">
+            {Object.entries(footerLinks).map(([key, links]) => (
+              <div key={key}>
+                <h4 className="text-sm font-bold uppercase tracking-widest text-white">
+                  {key}
+                </h4>
+                <ul className="mt-8 flex flex-col gap-4">
+                  {links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        to={link.to}
+                        onClick={(e) => handleHashClick(e, link.to)}
+                        className="text-sm font-light text-white/50 transition-all hover:text-aqua hover:translate-x-1 inline-block"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-12 flex flex-col gap-6 border-t border-white/5 pt-8 lg:flex-row lg:items-center lg:justify-between">
-          <form onSubmit={handleSubscribe} className="flex max-w-md gap-2">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Subscribe to our newsletter"
-              required
-              className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-white/30 transition-colors focus:border-cobalt/50 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="shrink-0 rounded-lg bg-cobalt px-4 py-2.5 text-white transition-colors hover:bg-cobalt-light"
-              aria-label="Subscribe"
-            >
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
-          {subscribed && (
-            <p className="text-xs text-phosphor">Thank you for subscribing!</p>
-          )}
-          <div className="flex gap-4">
+
+        {/* Bottom Bar */}
+        <div className="mt-20 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-steel/60">
+            © {new Date().getFullYear()} LYT24 Technologies. All rights reserved.
+          </p>
+          <div className="flex items-center gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-phosphor"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-steel transition-all hover:border-aqua/50 hover:bg-aqua/10 hover:text-aqua hover:-translate-y-1"
                 aria-label={social.label}
               >
-                <Icon name={social.icon} className="h-5 w-5" />
+                <Icon name={social.icon} className="h-4 w-4" />
               </a>
             ))}
           </div>
         </div>
-        <div className="mt-8 border-t border-white/5 pt-6">
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} LYT24 Technologies. All rights
-            reserved.
-          </p>
-        </div>
+      </div>
+      
+      {/* Massive Background Text */}
+      <div className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 whitespace-nowrap opacity-[0.03] pointer-events-none select-none overflow-hidden w-full text-center">
+        <span className="font-heading text-[18vw] font-black tracking-tighter text-white">
+          LYT24 TECH
+        </span>
       </div>
     </footer>
   );
