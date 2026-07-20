@@ -74,9 +74,21 @@ export default function Hero() {
       <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-[#D9693B]/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[#F8A55F]/5 blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 flex flex-1 items-end pb-16 sm:pb-24 lg:pb-28">
+      <div className="relative z-10 flex flex-1 items-end pb-8 sm:pb-12 lg:pb-16">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl lg:max-w-[62%] text-left">
+            <motion.span
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
+              animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: reduceMotion ? 0 : 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              className="section-label mb-4 block"
+            >
+              Welcome to LYT24 Technologies
+            </motion.span>
             <motion.h1
               initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
               animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
