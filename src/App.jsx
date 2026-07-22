@@ -5,6 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 // Add page imports here
 import Layout from "@/components/lyt24/Layout";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
@@ -16,6 +17,7 @@ const AppRoutes = () => {
       {/* Add your page Route elements here */}
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:slug" element={<ProjectCaseStudy />} />
         <Route path="/team" element={<Team />} />

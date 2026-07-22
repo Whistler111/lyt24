@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { createElement, useState, useRef, useEffect } from "react";
 import { PROJECTS } from "@/lib/projectData";
 import ProjectCard from "@/components/lyt24/ProjectCard";
 import SectionReveal from "@/components/lyt24/SectionReveal";
@@ -27,29 +27,29 @@ function WordReveal({ text, className = "", wordDelay = 90, tag: Tag = "h1" }) {
 
   const words = text.split(" ");
 
-  return (
-    <Tag ref={ref} className={className} aria-label={text}>
-      {words.map((word, i) => (
-        <span
-          key={i}
-          aria-hidden="true"
-          style={{
-            display: "inline-block",
-            marginRight: "0.28em",
-            transform: triggered ? "translateY(0)" : "translateY(30px)",
-            filter: triggered ? "blur(0px)" : "blur(6px)",
-            opacity: triggered ? 1 : 0,
-            transitionProperty: "transform, filter, opacity",
-            transitionDuration: "900ms, 800ms, 600ms",
-            transitionTimingFunction:
-              "cubic-bezier(0.16,1,0.3,1), cubic-bezier(0.16,1,0.3,1), ease-out",
-            transitionDelay: `${i * wordDelay}ms, ${i * wordDelay + 80}ms, ${i * wordDelay}ms`,
-          }}
-        >
-          {word}
-        </span>
-      ))}
-    </Tag>
+  return createElement(
+    Tag,
+    { ref, className, "aria-label": text },
+    words.map((word, i) => (
+      <span
+        key={i}
+        aria-hidden="true"
+        style={{
+          display: "inline-block",
+          marginRight: "0.28em",
+          transform: triggered ? "translateY(0)" : "translateY(30px)",
+          filter: triggered ? "blur(0px)" : "blur(6px)",
+          opacity: triggered ? 1 : 0,
+          transitionProperty: "transform, filter, opacity",
+          transitionDuration: "900ms, 800ms, 600ms",
+          transitionTimingFunction:
+            "cubic-bezier(0.16,1,0.3,1), cubic-bezier(0.16,1,0.3,1), ease-out",
+          transitionDelay: `${i * wordDelay}ms, ${i * wordDelay + 80}ms, ${i * wordDelay}ms`,
+        }}
+      >
+        {word}
+      </span>
+    )),
   );
 }
 
@@ -106,6 +106,7 @@ export default function Portfolio() {
                 alt="Portfolio illustration"
                 className="w-full max-w-xs drop-shadow-2xl sm:max-w-sm lg:max-w-md"
                 loading="lazy"
+                decoding="async"
               />
             </SectionReveal>
           </div>
@@ -144,13 +145,14 @@ export default function Portfolio() {
               </div>
             </SectionReveal>
           ) : (
-            <div className="mt-12 grid grid-cols-2 gap-4 md:mt-16 md:grid-cols-12 md:gap-8 lg:grid-cols-12">
+            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-16 md:grid-cols-12 md:gap-8">
               {filtered.map((project, i) => {
                 // Mobile 3-item repeating pattern:
                 // 0: Full width (1 large)
                 // 1, 2: Half width (2 in a row)
                 const mobilePos = i % 3;
-                const mobileSpan = mobilePos === 0 ? "col-span-2" : "col-span-1";
+                const mobileSpan =
+                  mobilePos === 0 ? "col-span-1 sm:col-span-2" : "col-span-1";
                 
                 // Desktop custom layout for 11 items:
                 // 0, 1: Half width (2 in a row)
@@ -175,7 +177,7 @@ export default function Portfolio() {
                 if (desktopSpan === "md:col-span-12") {
                   aspectClass = "aspect-[4/3] md:aspect-[3/1] max-h-[400px]"; 
                 }
-                if (mobileSpan === "col-span-2") {
+                if (mobilePos === 0) {
                   aspectClass = aspectClass.replace("aspect-[4/3]", "aspect-[16/9]");
                 }
 

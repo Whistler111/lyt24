@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
               <span className="section-label">Featured Work</span>
-              <h2 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
+              <h2 className="mt-4 max-w-2xl font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-5xl">
                 Projects That Drive Impact
               </h2>
             </div>

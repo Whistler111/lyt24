@@ -19,11 +19,22 @@ function getInitials(name) {
     .toUpperCase();
 }
 
+function normalizeAssetPath(src) {
+  if (!src || src.startsWith("http") || src.startsWith("/")) return src;
+  return `/${src}`;
+}
+
 export default function TeamCard({ member, index = 0, compact = false }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [failedImages, setFailedImages] = useState({
+    front: false,
+    back: false,
+    dialog: false,
+  });
   const gradient = gradients[index % gradients.length];
   const tags = member.skills ?? member.technologies ?? [];
-  const hoverImage = member.hoverImage ?? member.image;
+  const image = normalizeAssetPath(member.image);
+  const hoverImage = normalizeAssetPath(member.hoverImage ?? member.image);
   const bio =
     member.summary ??
     `${member.name} serves as ${member.role} at LYT24 Technologies, contributing to the company's delivery, culture, and client outcomes.`;
@@ -54,10 +65,15 @@ export default function TeamCard({ member, index = 0, compact = false }) {
         <div className="absolute inset-0 rounded-2xl transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-xl shadow-black/20 transition-all duration-300 [backface-visibility:hidden] group-hover:border-aqua/30 group-hover:shadow-cobalt/10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.35),rgba(148,163,184,0.18)_28%,rgba(15,23,42,0.96)_72%)]" />
-            {member.image ? (
+            {image && !failedImages.front ? (
               <img
-                src={member.image}
+                src={image}
                 alt={member.name}
+                loading="lazy"
+                decoding="async"
+                onError={() =>
+                  setFailedImages((current) => ({ ...current, front: true }))
+                }
                 className="absolute inset-0 h-full w-full object-cover object-top"
               />
             ) : (
@@ -85,10 +101,15 @@ export default function TeamCard({ member, index = 0, compact = false }) {
 
           <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/10 bg-slate-950 text-center shadow-xl shadow-cobalt/10 [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(37,99,235,0.24),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.08),transparent)]" />
-            {hoverImage ? (
+            {hoverImage && !failedImages.back ? (
               <img
                 src={hoverImage}
                 alt={member.name}
+                loading="lazy"
+                decoding="async"
+                onError={() =>
+                  setFailedImages((current) => ({ ...current, back: true }))
+                }
                 className="absolute inset-0 h-full w-full object-cover object-top"
               />
             ) : (
@@ -120,10 +141,15 @@ export default function TeamCard({ member, index = 0, compact = false }) {
 
           <div className="grid gap-0 md:grid-cols-[220px_1fr]">
             <div className="flex items-center justify-center bg-gradient-to-br from-cobalt/30 via-slate-900 to-phosphor/20 p-8">
-              {(member.hoverImage ?? member.image) ? (
+              {(hoverImage || image) && !failedImages.dialog ? (
                 <img
-                  src={member.hoverImage ?? member.image}
+                  src={hoverImage || image}
                   alt={member.name}
+                  loading="lazy"
+                  decoding="async"
+                  onError={() =>
+                    setFailedImages((current) => ({ ...current, dialog: true }))
+                  }
                   className="aspect-square w-full max-w-40 rounded-2xl object-cover shadow-2xl shadow-black/30"
                 />
               ) : (

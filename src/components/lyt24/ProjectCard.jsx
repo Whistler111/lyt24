@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 export default function ProjectCard({ project, index = 0, className = "", aspectClass = "aspect-[4/3] sm:aspect-[16/10]" }) {
   return (
@@ -24,6 +23,7 @@ export default function ProjectCard({ project, index = 0, className = "", aspect
             src={project.image}
             alt={project.title}
             loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </div>

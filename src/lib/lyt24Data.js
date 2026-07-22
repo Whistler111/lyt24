@@ -18,7 +18,7 @@ export const stats = [
   { label: "Projects Delivered", value: 50, suffix: "+" },
   { label: "Years of Experience", value: 2, suffix: "+" },
   { label: "Clients Served", value: 20, suffix: "+" },
-  { label: "Team Members", value: 25, suffix: "+" },
+  { label: "Team Members", value: 50, suffix: "+" },
 ];
 
 export const clientLogos = [
@@ -395,7 +395,7 @@ export const teamMembers = [
     name: "Emmanuel Chukwuemeka Nwabuodafi",
     role: "CTO",
     department: "Leadership",
-    image: "emmanuelanime.png",
+    image: "/emmanuelanime.png",
     hoverImage: "/EMMANUEL.jpg",
     leadership: true,
     summary:
@@ -412,7 +412,8 @@ export const teamMembers = [
       "Axios/Alova",
       "Tailwind",
     ],
-  },{
+  },
+  {
     name: "Noko Valentine Chukwuebuka",
     role: "Tech Team Lead",
     department: "Engineering",
@@ -709,7 +710,7 @@ export const teamMembers = [
       "Encryption",
     ],
   },
-  
+
   {
     name: "Okoye Ikechukwu Kelvin",
     role: "Assistant Data Analyst",
@@ -760,7 +761,7 @@ export const teamMembers = [
       "MLflow",
     ],
   },
-  
+
   {
     name: "Winifred Wade Felix",
     role: "Cyber Security Specialist",
@@ -835,6 +836,24 @@ export const teamMembers = [
     hoverImage: "/Annabel.png",
     summary:
       "Highly organized and proactive Virtual Assistant with experience supporting cross-functional teams in the successful execution of digital projects. Adept at administrative coordination, stakeholder communication, and operational support to ensure seamless project workflows. Skilled in documentation management, scheduling, and maintaining efficient processes.",
+  },
+  {
+    name: "Amaka Patrick",
+    role: "Head of Admin",
+    department: "Operations",
+    image: "/amakaanime.png",
+    hoverImage: "/amaka.jpeg",
+    summary:
+      "Nwamaka Glory Patrick is an administrative and project management professional from Afikpo North LGA, Ebonyi State. Her academic journey spans LEA Primary School Gwagwa, City of Wisdom International Secondary School, FCT College of Education, and the National Open University of Nigeria, where she earned a B.Sc. (Ed) in Health Education. She also holds NCE, PHE, TRC, Computer Trade Test, and Citizenship and Leadership Training certifications. She currently serves as MD of GLOMG Integrated Services Limited and provides executive administrative and project management leadership across Balisha Concepts Ltd, Fuse Engineers Ltd, and Arkland Construction Nig Ltd.",
+  },
+  {
+    name: "Wunmi Samuel",
+    role: "Corporate Relations",
+    department: "Operations",
+    image: "/wunmianime.png",
+    hoverImage: "/wunmibold.jpg",
+    summary:
+      "A strategic communicator with a knack for turning ideas into clear, compelling stories that connect brands with people. Skilled in brand communication, content strategy, storytelling, and audience engagement, with a focus on making every message count.",
   },
   {
     name: "Felicia Oluwabunmi Adeleke",
@@ -1110,7 +1129,7 @@ export const coreValues = [
 
 export const footerLinks = {
   company: [
-    { label: "About Us", to: "/#about" },
+    { label: "About Us", to: "/about" },
     { label: "Our Team", to: "/team" },
     { label: "Careers", to: "/contact" },
     { label: "Contact", to: "/contact" },

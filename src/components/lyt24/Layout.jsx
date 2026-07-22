@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Loader from "./Loader";
+import Seo from "./Seo";
 
 export default function Layout() {
   const [loading, setLoading] = useState(
@@ -29,6 +30,7 @@ export default function Layout() {
 
   return (
     <>
+      <Seo />
       <AnimatePresence>{loading && <Loader key="loader" />}</AnimatePresence>
       <Navbar />
       <main>

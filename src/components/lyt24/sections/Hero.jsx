@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
 import { stats as STATS } from "@/lib/lyt24Data";
 import StatCounter from "../StatCounter";
-import GridBackground from "../GridBackground";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=85";
@@ -32,8 +30,15 @@ export default function Hero() {
       setShouldLoadVideo(false);
       return;
     }
-    // Show video on all screen sizes
-    setShouldLoadVideo(true);
+
+    const loadVideo = () => setShouldLoadVideo(true);
+    if ("requestIdleCallback" in window) {
+      const idleId = window.requestIdleCallback(loadVideo, { timeout: 1200 });
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timer = setTimeout(loadVideo, 400);
+    return () => clearTimeout(timer);
   }, [reduceMotion]);
 
 
@@ -47,14 +52,15 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden bg-obsidian">
-      {/* Dynamic Background: Video on desktop, fallback image on mobile */}
+      {/* Lazy video background with image poster/fallback for first paint. */}
       {shouldLoadVideo ? (
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster={HERO_IMAGE}
           className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-1000"
         >
           <source src="/iStock-1423738060.mp4" type="video/mp4" />
@@ -64,15 +70,14 @@ export default function Hero() {
           src={HERO_IMAGE}
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-60"
-          loading="lazy"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
       )}
 
       {/* Subtle Bottom Gradient overlay for text legibility */}
       <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-      <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-[#D9693B]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[#F8A55F]/5 blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 flex flex-1 items-end pb-8 sm:pb-12 lg:pb-16">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -97,11 +102,11 @@ export default function Hero() {
                 delay: reduceMotion ? 0 : 1.5,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="max-w-full font-heading text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-5xl lg:text-6xl"
+              className="max-w-full font-heading text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
               {STATIC_HEADLINE}{" "}
               <span
-                className="relative inline-flex max-w-full overflow-hidden align-bottom"
+                className="relative inline-flex max-w-full overflow-hidden break-words align-bottom"
                 style={{ minHeight: "1.1em" }}
               >
                 <AnimatePresence mode="wait" initial={false}>
@@ -129,7 +134,7 @@ export default function Hero() {
             >
               <Link
                 to="/portfolio"
-                className="group inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-obsidian shadow-lg shadow-black/10 transition-all hover:bg-white/95 hover:scale-[1.02]"
+                className="group inline-flex min-h-12 w-full items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-obsidian shadow-lg shadow-black/10 transition-all hover:bg-white/95 hover:scale-[1.02] sm:w-auto"
               >
                 View Portfolio
               </Link>

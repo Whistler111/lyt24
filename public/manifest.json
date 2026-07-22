@@ -1,0 +1,24 @@
+{
+  "name": "LYT24 Technologies",
+  "short_name": "LYT24",
+  "description": "LYT24 Technologies is a leading software company based in Abuja, Nigeria, delivering enterprise software, cloud systems, mobile apps, and digital transformation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "/LOGO.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/LOGO.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

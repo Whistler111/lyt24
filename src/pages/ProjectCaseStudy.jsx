@@ -1,7 +1,7 @@
-import { useRef, useState, useEffect } from "react";
+import { createElement, useRef, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
+import { useReducedMotion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PROJECTS } from "@/lib/projectData";
 import GridBackground from "@/components/lyt24/GridBackground";
 import SectionReveal from "@/components/lyt24/SectionReveal";
@@ -29,29 +29,29 @@ function WordReveal({ text, className = "", wordDelay = 15, tag: Tag = "p" }) {
 
   const words = text ? text.split(" ") : [];
 
-  return (
-    <Tag ref={ref} className={className} aria-label={text}>
-      {words.map((word, i) => (
-        <span
-          key={i}
-          aria-hidden="true"
-          style={{
-            display: "inline-block",
-            marginRight: "0.28em",
-            transform: triggered ? "translateY(0)" : "translateY(20px)",
-            filter: triggered ? "blur(0px)" : "blur(4px)",
-            opacity: triggered ? 1 : 0,
-            transitionProperty: "transform, filter, opacity",
-            transitionDuration: "800ms, 700ms, 500ms",
-            transitionTimingFunction:
-              "cubic-bezier(0.16,1,0.3,1), cubic-bezier(0.16,1,0.3,1), ease-out",
-            transitionDelay: `${i * wordDelay}ms, ${i * wordDelay + 50}ms, ${i * wordDelay}ms`,
-          }}
-        >
-          {word}
-        </span>
-      ))}
-    </Tag>
+  return createElement(
+    Tag,
+    { ref, className, "aria-label": text },
+    words.map((word, i) => (
+      <span
+        key={i}
+        aria-hidden="true"
+        style={{
+          display: "inline-block",
+          marginRight: "0.28em",
+          transform: triggered ? "translateY(0)" : "translateY(20px)",
+          filter: triggered ? "blur(0px)" : "blur(4px)",
+          opacity: triggered ? 1 : 0,
+          transitionProperty: "transform, filter, opacity",
+          transitionDuration: "800ms, 700ms, 500ms",
+          transitionTimingFunction:
+            "cubic-bezier(0.16,1,0.3,1), cubic-bezier(0.16,1,0.3,1), ease-out",
+          transitionDelay: `${i * wordDelay}ms, ${i * wordDelay + 50}ms, ${i * wordDelay}ms`,
+        }}
+      >
+        {word}
+      </span>
+    )),
   );
 }
 
@@ -124,10 +124,10 @@ export default function ProjectCaseStudy() {
               Back to Portfolio
             </Link>
 
-            <h1 className="mt-8 max-w-4xl font-heading text-4xl font-bold tracking-normal text-white md:text-6xl">
+            <h1 className="mt-8 max-w-4xl font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-6xl">
               {project.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-xl leading-relaxed text-steel md:text-2xl">
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-steel md:text-2xl">
               {project.short_description}
             </p>
           </SectionReveal>
@@ -223,6 +223,8 @@ export default function ProjectCaseStudy() {
                 }
                 alt={project.title}
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </SectionReveal>

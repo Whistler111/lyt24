@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="grid gap-16 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3">
-               <img src="/LOGO.png" alt="LYT24" className="h-8 w-auto brightness-0 invert opacity-90" />
+               <img src="/LOGO.png" alt="LYT24" className="h-8 w-auto brightness-0 invert opacity-90" decoding="async" />
                <span className="font-heading text-3xl font-bold text-white tracking-tight">LYT<span className="text-aqua">24</span></span>
             </Link>
             <p className="mt-6 max-w-sm text-base font-light leading-relaxed text-white/50">

@@ -5,6 +5,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 
 const navLinks = [
   { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
   { label: "Services", to: "/#services" },
   { label: "Portfolio", to: "/portfolio" },
   { label: "Team", to: "/team" },
@@ -13,6 +14,7 @@ const navLinks = [
 
 const leftLinks = [
   { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
   { label: "Services", to: "/#services" },
 ];
 
@@ -24,12 +26,12 @@ const rightLinks = [
 
 const bannerMessages = [
   "New website, same brand.",
-  "2 years going strong!",
   "New website, same boring people.",
   "Look mom, a new news banner!",
   "1,051,200 minutes in business!",
   "Still writing code and drinking coffee.",
   "New brand, new website, same us.",
+  "2 years of ideas, errors, fixes, and wins.",
 ];
 
 export default function Navbar() {

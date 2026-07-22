@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Target, Eye, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ABOUT_TIMELINE, MISSION, VISION } from "@/lib/lyt24Data";
 import SectionReveal from "../SectionReveal";
 import GridBackground from "../GridBackground";
@@ -18,7 +18,7 @@ const ABOUT_IMAGES = [
   "/g9.jpeg",
   "/g12.jpeg",
   "/g13.jpeg",
-  "/garr.jpg"
+  "/garr.jpg",
 ];
 
 export default function About() {
@@ -33,6 +33,11 @@ export default function About() {
     return () => clearInterval(interval);
   }, [reduceMotion]);
 
+  useEffect(() => {
+    const nextImage = new Image();
+    nextImage.src = ABOUT_IMAGES[(currentImageIndex + 1) % ABOUT_IMAGES.length];
+  }, [currentImageIndex]);
+
   return (
     <section
       id="about"
@@ -43,7 +48,7 @@ export default function About() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">About LYT24</span>
-          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-5xl">
             Driving Digital Transformation Across Africa
           </h2>
         </SectionReveal>
@@ -63,7 +68,7 @@ export default function About() {
               are not just technically excellent, but contextually relevant and
               built to last.
             </p>
-            <div className="mt-8 flex flex-row items-center justify-center gap-8 sm:justify-start">
+            <div className="mt-8 flex flex-row items-center justify-center gap-5 min-[380px]:gap-8 sm:justify-start">
               <div className="text-center sm:text-left">
                 <div className="font-mono text-3xl sm:text-4xl font-bold text-aqua">
                   50+
@@ -93,6 +98,9 @@ export default function About() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1.2, ease: "easeInOut" }}
                   className="absolute inset-0 h-full w-full object-cover"
+                  loading={currentImageIndex === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchPriority={currentImageIndex === 0 ? "high" : "auto"}
                 />
               </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent pointer-events-none" />
@@ -135,18 +143,18 @@ export default function About() {
         <div className="mt-24 flex flex-col gap-12 max-w-5xl mx-auto">
           {/* Mission Card */}
           <SectionReveal>
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.02] p-6 sm:p-10 md:p-16 transition-all hover:bg-white/[0.04]">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:bg-white/[0.04] sm:p-10 md:rounded-[2rem] md:p-16">
               <div className="grid gap-12 md:grid-cols-2 items-center">
                 {/* Left: Text Content */}
                 <div className="order-2 md:order-1 flex flex-col justify-center">
                   <div className="mb-6">
-                    <h3 className="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight">
+                    <h3 className="font-heading text-3xl font-bold text-white tracking-tight sm:text-5xl">
                       Our <span className="text-aqua">Mission</span>
                     </h3>
                     <div className="mt-6 h-1 w-16 rounded-full bg-aqua" />
                   </div>
                   
-                  <p className="text-lg font-light leading-relaxed text-steel/90 max-w-md">
+                  <p className="max-w-md text-base font-light leading-relaxed text-steel/90 sm:text-lg">
                     {MISSION}
                   </p>
                   
@@ -163,7 +171,7 @@ export default function About() {
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                     className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-md"
                   >
-                    <img src="/mission.png" alt="Our Mission Illustration" className="h-auto w-full object-contain drop-shadow-2xl" />
+                    <img src="/mission.png" alt="Our Mission Illustration" className="h-auto w-full object-contain drop-shadow-2xl" loading="lazy" decoding="async" />
                   </motion.div>
                 </div>
               </div>
@@ -172,7 +180,7 @@ export default function About() {
 
           {/* Vision Card */}
           <SectionReveal delay={0.1}>
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.02] p-6 sm:p-10 md:p-16 transition-all hover:bg-white/[0.04]">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all hover:bg-white/[0.04] sm:p-10 md:rounded-[2rem] md:p-16">
               <div className="grid gap-12 md:grid-cols-2 items-center">
                 {/* Left: Image */}
                 <div className="order-1 flex justify-center md:justify-start relative z-10">
@@ -181,20 +189,26 @@ export default function About() {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                     className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-md"
                   >
-                    <img src="/vision.png" alt="Our Vision Illustration" className="h-auto w-full object-contain drop-shadow-2xl" />
+                    <img
+                      src="/vision.png"
+                      alt="Our Vision Illustration"
+                      className="h-auto w-full object-contain drop-shadow-2xl"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </motion.div>
                 </div>
                 
                 {/* Right: Text Content */}
                 <div className="order-2 flex flex-col justify-center md:pl-8">
                   <div className="mb-6">
-                    <h3 className="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight">
+                    <h3 className="font-heading text-3xl font-bold text-white tracking-tight sm:text-5xl">
                       Our <span className="text-cobalt">Vision</span>
                     </h3>
                     <div className="mt-6 h-1 w-16 rounded-full bg-cobalt" />
                   </div>
                   
-                  <p className="text-lg font-light leading-relaxed text-steel/90 max-w-md">
+                  <p className="max-w-md text-base font-light leading-relaxed text-steel/90 sm:text-lg">
                     {VISION}
                   </p>
                   

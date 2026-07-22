@@ -30,7 +30,7 @@ export default function TeamPreview() {
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
               <span className="section-label">Our Team</span>
-              <h2 className="mt-4 max-w-2xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
+              <h2 className="mt-4 max-w-2xl font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-5xl">
                 Leadership That Drives Innovation
               </h2>
             </div>
@@ -44,7 +44,7 @@ export default function TeamPreview() {
           </div>
         </SectionReveal>
 
-        <div className="mt-12 grid justify-center gap-6 [grid-template-columns:repeat(auto-fit,minmax(210px,260px))] md:mt-16">
+        <div className="mt-12 grid justify-center gap-6 [grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),260px))] md:mt-16">
           {leaders.map((member, i) => (
             <TeamCard key={member.name} member={member} index={i} compact />
           ))}

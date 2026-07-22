@@ -1,30 +1,8 @@
-import {
-  Landmark,
-  CreditCard,
-  HeartPulse,
-  GraduationCap,
-  Truck,
-  ShoppingBag,
-  Building2,
-  Sprout,
-} from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { INDUSTRIES } from "@/lib/lyt24Data";
 import SectionReveal from "../SectionReveal";
 import PartnerCarousel from "../PartnerCarousel";
 import GridBackground from "../GridBackground";
-
-const ICONS = {
-  Landmark,
-  CreditCard,
-  HeartPulse,
-  GraduationCap,
-  Truck,
-  ShoppingBag,
-  Building2,
-  Sprout,
-};
 
 export default function TrustClients() {
   return (
@@ -45,9 +23,13 @@ export default function TrustClients() {
         </SectionReveal>
 
         <div className="mt-16 border-t border-white/10 py-12 md:py-16 overflow-hidden flex flex-col">
-          <div className="mx-auto mb-10 md:mb-12 w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-            <h2 className="font-heading text-[1.35rem] leading-tight sm:text-3xl font-medium text-white md:text-4xl lg:text-5xl whitespace-nowrap">
-              Industries we've <del className="text-white/40 decoration-red-500/70">disrupted</del> served.
+          <div className="mx-auto mb-10 w-full max-w-7xl px-5 text-center sm:px-6 md:mb-12 md:text-left lg:px-8">
+            <h2 className="mx-auto whitespace-nowrap font-heading text-base font-medium leading-tight text-white min-[380px]:text-lg sm:text-3xl md:text-4xl lg:text-5xl">
+              Industries we've{" "}
+              <del className="text-white/40 decoration-red-500/70">
+                disrupted
+              </del>{" "}
+              served.
             </h2>
           </div>
           

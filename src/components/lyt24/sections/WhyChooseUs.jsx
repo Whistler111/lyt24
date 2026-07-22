@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">Why Choose Us</span>
-          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-5xl">
             Built for Enterprise. Designed for Africa.
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-steel md:text-lg">
@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
                 }
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-8 transition-all duration-300 hover:border-white/20"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:border-white/20 sm:p-8"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-cobalt/20 to-aqua/10 text-aqua transition-transform duration-300 group-hover:scale-110">
                   <Icon className="h-5 w-5" />

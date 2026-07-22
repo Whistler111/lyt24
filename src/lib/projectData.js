@@ -46,7 +46,7 @@ export const PROJECTS = [
   {
     title: "ICSC 2026 Global Portal",
     slug: "icsc-2026",
-    category: "Web",
+    category: "Government",
     industry: "Public Sector & Events",
     short_description:
       "International Civil Service Conference registration portal built for the Office of the Head of Civil Service Nigeria, supporting secure global transactions and attendee management.",

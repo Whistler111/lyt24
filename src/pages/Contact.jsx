@@ -221,6 +221,7 @@ export default function Contact() {
                 alt="Contact us illustration"
                 className="w-full max-w-xs drop-shadow-2xl sm:max-w-sm lg:max-w-md"
                 loading="lazy"
+                decoding="async"
               />
             </SectionReveal>
           </div>
@@ -323,7 +324,7 @@ export default function Contact() {
                 ) : (
                   <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="relative rounded-2xl border border-white/10 bg-white/[0.025] p-7 backdrop-blur-sm md:p-10"
+                    className="relative rounded-2xl border border-white/10 bg-white/[0.025] p-5 backdrop-blur-sm sm:p-7 md:p-10"
                   >
                     {/* Subtle glow */}
                     <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-aqua/5 via-transparent to-cobalt/5" />
@@ -467,7 +468,7 @@ export default function Contact() {
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-6 md:px-10">
+            <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-5 sm:px-6 md:px-10">
               {FAQS.map((faq, i) => (
                 <FaqItem key={i} q={faq.q} a={faq.a} index={i} />
               ))}

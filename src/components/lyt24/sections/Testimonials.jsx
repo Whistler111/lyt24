@@ -27,7 +27,7 @@ export default function Testimonials() {
       <div className="relative mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
         <SectionReveal className="text-center">
           <span className="section-label">Client Stories</span>
-          <h2 className="mt-4 font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
+          <h2 className="mt-4 font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-5xl">
             Trusted by Leaders
           </h2>
         </SectionReveal>
@@ -48,7 +48,7 @@ export default function Testimonials() {
                   <Star key={i} className="h-4 w-4 fill-aqua text-aqua" />
                 ))}
               </div>
-              <p className="mt-6 font-quote text-xl leading-relaxed text-white md:text-2xl">
+              <p className="mt-6 font-quote text-lg leading-relaxed text-white sm:text-xl md:text-2xl">
                 "{testimonial.quote}"
               </p>
               <div className="mt-8">

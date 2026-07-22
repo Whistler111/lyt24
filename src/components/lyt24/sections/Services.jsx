@@ -14,7 +14,7 @@ export default function Services() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">What We Do</span>
-          <h2 className="mt-4 max-w-3xl font-heading text-4xl font-bold tracking-normal text-white md:text-5xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-5xl">
             Comprehensive Technology Solutions
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-steel md:text-lg">

@@ -13,7 +13,7 @@ export default function ContactCTA() {
       <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
         <SectionReveal>
           <span className="section-label">Let's Build Together</span>
-          <h2 className="mt-4 font-heading text-4xl font-bold tracking-normal text-white md:text-6xl">
+          <h2 className="mt-4 font-heading text-3xl font-bold tracking-normal text-white sm:text-4xl md:text-6xl">
             Something <span className="gradient-text">Extraordinary?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-steel md:text-lg">

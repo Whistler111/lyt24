@@ -9,7 +9,6 @@ import FeaturedProjects from "@/components/lyt24/sections/FeaturedProjects";
 import WhyChooseUs from "@/components/lyt24/sections/WhyChooseUs";
 import TechStack from "@/components/lyt24/sections/TechStack";
 import TeamPreview from "@/components/lyt24/sections/TeamPreview";
-import Process from "@/components/lyt24/sections/Process";
 import Testimonials from "@/components/lyt24/sections/Testimonials";
 import ContactCTA from "@/components/lyt24/sections/ContactCTA";
 
